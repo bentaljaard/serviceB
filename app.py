@@ -8,7 +8,8 @@ class MainHandler(tornado.web.RequestHandler):
         self.set_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
         # self.write(os.environ['response_message'])
         headers = self.request.headers
-        for key in headers.keys():
+        keys = list(headers.keys())
+        for key in keys:
             if not key.startswith('X'):
                 headers.pop(key)
         print(headers)
