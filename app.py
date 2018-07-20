@@ -9,7 +9,7 @@ class MainHandler(tornado.web.RequestHandler):
         # self.write(os.environ['response_message'])
         headers = self.request.headers
         for key in headers.keys():
-            if not key.startsWith('X'):
+            if not key.startswith('X'):
                 headers.pop(key)
         print(self.request.headers)
         r = requests.get(os.environ['target_service'], headers=self.request.headers)
