@@ -8,7 +8,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.set_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
         # self.write(os.environ['response_message'])
 
-        r = requests.get(os.environ['target_service'], headers=self.headers)
+        r = requests.get(os.environ['target_service'], headers=self.request.headers)
 
         self.write(r.text)
 
