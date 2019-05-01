@@ -21,7 +21,8 @@ class MainHandler(tornado.web.RequestHandler):
         
         try:
             # r = requests.get("http://localhost:8080")
-            r = requests.get(os.environ['EXTERNAL_APP2_SERVICE'], headers=headers, verify=False)
+            #r = requests.get(os.environ['EXTERNAL_APP2_SERVICE'], headers=headers, verify=False)
+            r = requests.get(https://external-app2, headers=headers, verify=False)
         except (requests.exceptions.ConnectionError):
             print("Unable to connect")
             error_message = "Connection Error"
