@@ -22,7 +22,7 @@ class MainHandler(tornado.web.RequestHandler):
         try:
             # r = requests.get("http://localhost:8080")
             #r = requests.get(os.environ['EXTERNAL_APP2_SERVICE'], headers=headers, verify=False)
-            r = requests.get("https://external-app2.app1.svc", headers=headers, verify=False)
+            r = requests.get("https://external-app2.app1.svc/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures", headers=headers, verify=False)
         except (requests.exceptions.ConnectionError):
             print("Unable to connect")
             error_message = "Connection Error"
