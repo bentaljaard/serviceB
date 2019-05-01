@@ -33,6 +33,7 @@ class MainHandler(tornado.web.RequestHandler):
         target_service = dict()
         target_service["service"] = "c"
         if r is not None:
+            print(r)
             target_service["payload"] = r.json()
             target_service["http_code"] = r.status_code
         else:
